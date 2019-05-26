@@ -12,7 +12,7 @@
                 <div class="card mb-3">
                     <div class="d-flex border-bottom card-header">
                         <div class="d-flex" style="flex:1">
-                            <h2>{{$experience->job}} at {{$experience->where}}</h2>
+                            <h2>{{$experience->job}} <strong>@</strong> {{$experience->where}}</h2>
                             <p>{{$experience->years}}</p>
                         </div>
 

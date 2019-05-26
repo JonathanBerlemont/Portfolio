@@ -12,6 +12,12 @@
                 @csrf
                 <label for="name">Name</label>
                 <input name="name" id="name" type="text" class="form-control">
+                
+                <label for="type">Type of Skill</label>
+                <select name="type" id="type" class="form-control">
+                    <option value="language">Languages/ Frameworks</option>
+                    <option value="technology">Technologies</option>
+                </select>
 
                 <label for="image" class="mt-3">Skill Icon</label>
                 <input type="file" name="image" id="image" class="form-control">

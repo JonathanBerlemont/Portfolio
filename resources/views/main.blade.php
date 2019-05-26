@@ -43,7 +43,9 @@
                     <i class="fa fa-bars"></i>
                 </button>
                 <a class="navbar-brand" href="#">
-                    <img src="/preus/assets/img/brand-light.png" alt="brand" class="mw-100">
+                    <div style="display: flex!important; align-items: center!important">
+                        <p style="color: white !important; margin:0">Jonathan B.</p>
+                    </div>
                 </a>
             </div>
         </div>
@@ -148,7 +150,7 @@
                             <div class="col-md-6 col-lg-4">
                                 <a target="_blank" href="{{$project->github}}" class="card ts-gallery__item ts-floated-description" data-animate="ts-fadeInUp">
                                     <div class="ts-gallery__item-description">
-                                        <h5>{{$project->title}} <span style="font-size: 15px">(took {{$project->time_taken}} weeks)</span></h5>
+                                        <h5>{{$project->title}} <span style="font-size: 15px">(took {{$project->time_taken}} {{str_plural('week', $project->time_taken)}})</span></h5>
                                         <h3>{{$project->most_used_language}}</h3>
                                     </div>
                                     <div class="ts-background ts-img-into-bg">
@@ -181,18 +183,20 @@
 
                         <div class="col-md-4">
                             <div class="ts-feature">
-                                <img src="/preus/assets/img/icon__user.png" alt="" class="mb-5">
-                                <h4>Know Your User</h4>
-                                <p>Donec finibus a quam vel scelerisque. Donec varius</p>
+                                <img src="/img/clock.png" alt="" class="mb-5" style="width: 50px; filter: invert(1)">
+                                <h4>Reliable & Ponctual</h4>
+                                <p>I will always deliver your product on time!</p>
+                                <p style="font-style: italic">"A wizard is never late, nor is he early, he arrives precisely when he means to." </p>
+                                <p style="text-align: right !important; font-size: 15px">Gandalf The Grey</p>
                             </div>
                         </div>
                         <!--end Feature-->
 
                         <div class="col-md-4">
                             <div class="ts-feature">
-                                <img src="/preus/assets/img/icon__envelope.png" alt="" class="mb-5">
-                                <h4>Target The Audience</h4>
-                                <p> Vestibulum scelerisque quam vitae arcu euismod, sit</p>
+                                <img src="/img/idea.png" alt="" class="mb-5" style="width: 50px; filter: invert(1)">
+                                <h4>Creative</h4>
+                                <p>I will always find a way to make your dream feature come true and with an interesting and practical design!</p>
                             </div>
                         </div>
                         <!--end Feature-->
@@ -274,8 +278,16 @@
 
                         <div class="col-sm-6 col-md-3">
                             <div class="ts-promo-number text-center">
-                                <figure class="odometer" data-odometer-final="{{App\Skill::all()->count()}}">0</figure>
-                                <h5>Known Languages / Technologies</h5>
+                                <figure class="odometer" data-odometer-final="{{App\Skill::where('type', 'language')->count()}}">0</figure>
+                                <h5>Known Languages / Frameworks</h5>
+                            </div>
+                        </div>
+                        <!--end Promo number-->
+
+                        <div class="col-sm-6 col-md-3">
+                            <div class="ts-promo-number text-center">
+                                <figure class="odometer" data-odometer-final="{{App\Skill::where('type', 'technology')->count()}}">0</figure>
+                                <h5>Known Web Technologies</h5>
                             </div>
                         </div>
                         <!--end Promo number-->
@@ -286,20 +298,12 @@
                                 <h5>Projects</h5>
                             </div>
                         </div>
-                        <!--end Promo number-->
-
-                        <div class="col-sm-6 col-md-3">
-                            <div class="ts-promo-number text-center">
-                                <figure class="odometer" data-odometer-final="9000">0</figure>
-                                <h5>Awards</h5>
-                            </div>
-                        </div>
-                        <!--end Promo number-->
+                        <!--end Promo number--> 
 
                         <div class="col-sm-6 col-md-3">
                             <div class="ts-promo-number text-center">
                                 <figure class="odometer" data-odometer-final="{{(now()->year - 2018)}}">0</figure>
-                                <h5>Years Experience</h5>
+                                <h5>{{str_plural('Year', (now()->year - 2018))}} Experience</h5>
                             </div>
                         </div>
                         <!--end Promo number-->
@@ -331,7 +335,7 @@
                                     
                                     <li data-animate="ts-fadeInRight" data-ts-delay=".{{$loop->index}}s">
                                         <h5 class="opacity-30"><strong>{{$experience->years}}</strong></h5>
-                                        <h4>{{$experience->job}} at {{$experience->where}}</h4>
+                                        <h4>{{$experience->job}} @ {{$experience->where}}</h4>
                                         <p>
                                             {{$experience->description}}
                                         </p>
@@ -367,9 +371,9 @@
 
                         <div class="col-md-5">
                             <p>
-                                Trained in Molengeek with many other developers, I quickly found interest for Web Developing. It has since then been a real passion. Hard working during the day on my projects, as well as after my working hours, out of pure pleasure. 
+                                Trained in Molengeek amongst many other developers, I quickly found interest for Web Developing. It has since then been a real passion. Hard working during the day on my projects as well as after my working hours, out of pure pleasure. 
                             </p>
-                            <a target="_blank" href="/img/CV_Jonathan_Berlemont.pdf" class="ts-link ts-underline mb-5 mb-md-0 d-inline-block">More About Me</a>
+                            <a target="_blank" href="/img/CV_Jonathan_Berlemont.pdf" class="ts-link ts-underline mb-5 mb-md-0 d-inline-block">My CV</a>
                         </div>
 
                         <div class="col-sm-6 col-md-4">

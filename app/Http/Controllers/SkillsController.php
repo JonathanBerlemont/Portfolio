@@ -42,8 +42,9 @@ class SkillsController extends Controller
     {
         $attributes = request()->validate([
             'name' => 'required',
+            'percentage' => 'required|integer',
             'image' => 'mimes:png',
-            'percentage' => 'required|integer'
+            'type' => 'required',
         ]);
 
         $attributes = $this->UploadImage($attributes);

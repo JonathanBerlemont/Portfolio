@@ -19,6 +19,7 @@
                             </form>
                             <div style="width:200px; height:200px; background-image: url(/storage/skills/{{$skill->image}}); background-size: contain; background-repeat: no-repeat; background-position: center"></div>
                             <p class="mt-4 text-center w-100" style="font-size: 30px">{{$skill->name}}</p>
+                            <small class="mx-auto">{{ucfirst($skill->type)}}</small>
                         </div>
                     </div>
                 @endforeach

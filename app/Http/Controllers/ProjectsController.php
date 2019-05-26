@@ -42,7 +42,7 @@ class ProjectsController extends Controller
     {
         $attributes = request()->validate([
             'title' => 'required',
-            'description' => 'required',
+            'github' => 'required',
             'image' => 'required',
             'time_taken' => 'required|integer',
             'most_used_language' => 'required'
@@ -88,7 +88,7 @@ class ProjectsController extends Controller
     {
         $attributes = request()->validate([
             'title' => 'required',
-            'description' => 'required',
+            'github' => 'required',
             'time_taken' => 'required|integer',
             'most_used_language' => 'required'
         ]);
